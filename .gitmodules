@@ -1,0 +1,3 @@
+[submodule "sensors-to-db"]
+	path = sensors-to-db
+	url = https://github.com/LaurentChion/sensors-to-db.git
