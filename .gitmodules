@@ -7,3 +7,6 @@
 [submodule "ReactMqtt"]
 	path = ReactMqtt
 	url = https://github.com/LaurentChion/ReactMqtt.git
+[submodule "SensorsWebService"]
+	path = SensorsWebService
+	url = https://github.com/LaurentChion/SensorsWebService.git
