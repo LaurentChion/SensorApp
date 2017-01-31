@@ -1,3 +1,6 @@
 [submodule "sensors-to-db"]
 	path = sensors-to-db
 	url = https://github.com/LaurentChion/sensors-to-db.git
+[submodule "random-sensors"]
+	path = random-sensors
+	url = https://github.com/pigne/random-sensors.git
