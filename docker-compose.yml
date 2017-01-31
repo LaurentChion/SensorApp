@@ -1,0 +1,30 @@
+version: '2'
+services:
+  mosca:
+    image: matteocollina/mosca
+    ports:
+      - "8080:80"
+      - "1883"
+    expose:
+      - "1883"
+      - "8080"
+    networks:
+      - mynet
+    hostname: mosca
+
+  random-sensors:
+    build: ./random-sensors
+    networks:
+      - mynet
+    depends_on:
+      - mosca
+
+
+  reactmqtt:
+    build: ./ReactMqtt
+    ports:
+      - "3000:3000"
+
+networks:
+  mynet:
+    driver: bridge
