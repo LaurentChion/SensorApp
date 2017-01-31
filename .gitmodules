@@ -7,3 +7,6 @@
 [submodule "SensorsWebService"]
 	path = SensorsWebService
 	url = https://github.com/LaurentChion/SensorsWebService.git
+[submodule "random-sensors"]
+	path = random-sensors
+	url = https://github.com/LaurentChion/random-sensors.git
