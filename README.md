@@ -14,7 +14,18 @@ An app that generate, save and visualize sensors (IoT)
 * WebService run on port 8090
 
 # How to run it ?
-In a terminal go into this folder and run : ``` docker-compose up -d ```
+Clone this repository :
+```
+git clone https://github.com/LaurentChion/SensorsApp.git
+```
+
+In a terminal go into this folder and run :
+```
+./install
+```
 
 # How to close it  ?
-In a terminal go into this folder and run : ``` docker-compose down ```
+In a terminal go into this folder and run :
+```
+docker-compose down
+```
