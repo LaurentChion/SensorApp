@@ -4,27 +4,38 @@ services:
     image: matteocollina/mosca
     ports:
       - "8080:80"
-      - "1883"
-    expose:
-      - "1883"
-      - "8080"
-    networks:
-      - mynet
+      - "9000:1883"
     hostname: mosca
 
   random-sensors:
     build: ./random-sensors
-    networks:
-      - mynet
     depends_on:
       - mosca
 
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+    hostname: mongodb
+
+  sensors-to-db:
+    build: ./sensors-to-db
+    hostname: sensorsToDb
+    depends_on:
+      - mongodb
+    links:
+    - mongodb
+
+  webservice:
+    build: ./SensorsWebService
+    ports:
+      - "8090:8090"
+    depends_on:
+      - mongodb
+    links:
+    - mongodb
 
   reactmqtt:
     build: ./ReactMqtt
     ports:
       - "3000:3000"
-
-networks:
-  mynet:
-    driver: bridge
