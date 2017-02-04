@@ -44,5 +44,3 @@ services:
     depends_on:
       - webservice
       - random-sensors
-    links:
-      - webservice
