@@ -17,6 +17,8 @@ services:
     ports:
       - "27017:27017"
     hostname: mongodb
+    volumes:
+      - ./data:/data/db
 
   sensors-to-db:
     build: ./sensors-to-db
@@ -34,6 +36,7 @@ services:
       - "8090:8090"
     depends_on:
       - mongodb
+      - sensors-to-db
     links:
       - mongodb
 
