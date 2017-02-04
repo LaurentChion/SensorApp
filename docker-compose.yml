@@ -24,18 +24,25 @@ services:
     depends_on:
       - mongodb
     links:
-    - mongodb
+      - mosca
+      - mongodb
 
   webservice:
     build: ./SensorsWebService
+    hostname: webservice
     ports:
       - "8090:8090"
     depends_on:
       - mongodb
     links:
-    - mongodb
+      - mongodb
 
   reactmqtt:
     build: ./ReactMqtt
     ports:
       - "3000:3000"
+    depends_on:
+      - webservice
+      - random-sensors
+    links:
+      - webservice
