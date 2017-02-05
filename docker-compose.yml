@@ -24,7 +24,7 @@ services:
     build: ./sensors-to-db
     hostname: sensorsToDb
     depends_on:
-      - mongodb
+      - start_dependencies
     links:
       - mosca
       - mongodb
@@ -35,7 +35,7 @@ services:
     ports:
       - "8090:8090"
     depends_on:
-      - mongodb
+      - start_dependencies
       - sensors-to-db
     links:
       - mongodb
@@ -47,3 +47,8 @@ services:
     depends_on:
       - webservice
       - random-sensors
+
+  start_dependencies:
+    build: ./dependencyIsStart
+    depends_on:
+      - mongodb
