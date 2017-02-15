@@ -29,3 +29,11 @@ In a terminal go into this folder and run :
 ```
 docker-compose down
 ```
+
+# Troubleshooting
+Sometime it happens that webservice or sensors-to-db can't connect to database.
+Stop docker and relaunch it :
+```
+docker-compose down
+docker-compose up
+```
